@@ -653,7 +653,7 @@ input[type="range"]::-moz-range-thumb {
 
 <!-- STEP 3 -->
 <div id="step3" class="step">
-  <h2>Is it true that you love flowers ?  </h2>
+  <h2>Is it true that you love flowers !  </h2>
   <p>See your sweetest moments that caught my eyes, Each star holds a moment of us… tap them all 💫</p>
   <div id="star-field">
     <span class="star" ontouchstart="handleStarTap(0, event)" onclick="openMemory(0)">⭐</span>
@@ -772,6 +772,11 @@ function nextStep(n, e){
  const current = document.querySelector('.step.active');
  if(current) {
    current.style.animation = 'fadeSlideOut 0.4s ease';
+   
+   // Stop music when leaving step 5
+   if(current.id === 'step5' && n !== 5) {
+     stopMusic();
+   }
  }
  
  setTimeout(() => {
@@ -949,12 +954,19 @@ function captureButton(btn) {
 
 let celebrated = false;
 
+function stopMusic() {
+  const music = document.getElementById('bg-music');
+  music.pause();
+  music.currentTime = 0;
+}
+
 function celebrate(){
   if(celebrated) return;
   celebrated = true;
 
   // Try to play music
-  document.getElementById('bg-music').play().catch(e => {
+  const music = document.getElementById('bg-music');
+  music.play().catch(e => {
     console.log('Audio autoplay blocked - user interaction needed');
   });
   
@@ -987,6 +999,10 @@ function celebrate(){
 }
 
 function replayQuest() {
+  // Stop the music
+  stopMusic();
+  
+  // Reset all states
   openedStars.clear();
   dodgeCount = 0;
   buttonDodging = true;
