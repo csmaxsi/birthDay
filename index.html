@@ -547,16 +547,16 @@ input[type="range"]::-moz-range-thumb {
 
 <!-- STEP 1 -->
 <div id="step1" class="step active">
-  <h2>💫 Love Initialization</h2>
-  <p>Every miracle begins with a heartbeat…</p>
+  <h2>💫 Hey Sudu Manika</h2>
+  <p>Come with me to your birthday party…</p>
   <div class="heart-main" ontouchstart="handleHeartTap(event)" onclick="handleHeartTap(event)">❤️</div>
-  <p class="hint">Touch my heart to begin our story…</p>
+  <p class="hint">Touch my heart to enter our little birthday party…</p>
 </div>
 
 <!-- STEP 2 -->
 <div id="step2" class="step">
-  <h2>📖 Our First Chapter</h2>
-  <p>Slide to the month destiny introduced us.</p>
+  <h2>📖 Before we step in cut the ribbon to our little party</h2>
+  <p>Slide to the month this little angel came to this beautifull world</p>
   <div id="dateValue">January</div>
   <input type="range" min="1" max="12" value="1" oninput="updateSlider(this.value)" ontouchstart="handleSliderTouch()">
   <p class="hint">Find the month our hearts collided…</p>
@@ -564,8 +564,8 @@ input[type="range"]::-moz-range-thumb {
 
 <!-- STEP 3 -->
 <div id="step3" class="step">
-  <h2>✨ Memory Constellation</h2>
-  <p>Each star holds a moment of us… tap them all 💫</p>
+  <h2>✨ Hey gorgeous birthday girl, lets see some sweet memories of you !  </h2>
+  <p>See your sweetest moments that caught to my eyes, Each star holds a moment of us… tap them all 💫</p>
   <div id="star-field">
     <span class="star" ontouchstart="handleStarTap(0, event)" onclick="openMemory(0)">⭐</span>
     <span class="star" ontouchstart="handleStarTap(1, event)" onclick="openMemory(1)">⭐</span>
@@ -573,7 +573,7 @@ input[type="range"]::-moz-range-thumb {
     <span class="star" ontouchstart="handleStarTap(3, event)" onclick="openMemory(3)">⭐</span>
     <span class="star" ontouchstart="handleStarTap(4, event)" onclick="openMemory(4)">⭐</span>
   </div>
-  <p id="star-hint" class="hint">Open every star to unlock my heart…</p>
+  <p id="star-hint" class="hint">Open every star to unlock your birthday gift…</p>
 </div>
 
 <!-- STEP 4 -->
@@ -590,8 +590,8 @@ input[type="range"]::-moz-range-thumb {
     <!-- REPLACE THIS SRC WITH YOUR PHOTO -->
     <img src="final-photo.jpg" alt="Us" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>💑</div>' + this.parentElement.innerHTML.substring(this.parentElement.innerHTML.indexOf('</div>') + 6)">
     <h2>Happy Birthday My Love! 🎂</h2>
-    <p>Every day with you is an adventure, every moment a treasure. You make ordinary days magical and my heart overflow with joy. Here's to another year of laughter, love, and beautiful memories together! 💖✨</p>
-    <p style="margin-top:20px; font-style:italic; color: var(--rose-gold); font-weight: 600;">I love you more than words can say! 🎉💕</p>
+    <p>Every day with you is an adventure, every moment a treasure. You make ordinary days magical and my heart overflow with joy. Wishing you the happiest birthday pretty girl 💖✨</p>
+    <p style="margin-top:20px; font-style:italic; color: var(--rose-gold); font-weight: 600;">Today is yours only, Cheers to your 24th darling !!! much love  🎉💕</p>
     <button id="replayBtn" onclick="replayQuest()">Replay Our Story 🔄</button>
   </div>
 </div>
@@ -609,17 +609,17 @@ input[type="range"]::-moz-range-thumb {
 </div>
 
 <script>
-const correctMonth = 11; // November
+const correctMonth = 02; // November
 let openedStars = new Set();
 let dodgeCount = 0;
 let buttonDodging = true;
 
 // Memory data - REPLACE IMAGE PATHS WITH YOUR PHOTOS
 const memories = [
- {img: "memory1.jpg", text: "Our song that makes my heart skip a beat every time 🎵"},
- {img: "memory2.jpg", text: "The place where we laughed until we cried 😄"},
- {img: "memory3.jpg", text: "That sunset we watched together, forever in my heart 🌅"},
- {img: "memory4.jpg", text: "The spot where I knew you were the one ✨"},
+ {img: "memory1.jpg", text: "Your favourite place that will give peace to you ✨"},
+ {img: "memory2.jpg", text: "The prettiest girl in the highest place of the city of dreams ✨"},
+ {img: "memory3.jpg", text: "The place you took me to heal ourselves 🌅"},
+ {img: "memory4.jpg", text: "You were always my flower girl 🌹"},
  {img: "memory5.jpg", text: "Every adventure with you is my favorite 💕"}
 ];
 
@@ -760,7 +760,7 @@ function openMemory(i){
  openedStars.add(i);
  
  if(openedStars.size === 5){
-   document.getElementById('star-hint').innerText = "✨ All memories unlocked… my heart is ready 💖";
+   document.getElementById('star-hint').innerText = "✨ All memories unlocked… lets celebrate !!!! 💖";
    setTimeout(() => nextStep(4), 1800);
  }
 }
@@ -908,7 +908,7 @@ function replayQuest() {
   document.getElementById('final-btn').style.color = "var(--deep-rose)";
   document.getElementById('final-btn').ontouchstart = handleButtonTouch;
   document.getElementById('catch-msg').innerText = "";
-  document.getElementById('star-hint').innerText = "Open every star to unlock my heart…";
+  document.getElementById('star-hint').innerText = "Open every star to start the celebrations…";
   
   document.querySelector('input[type="range"]').value = 1;
   updateSlider(1);
